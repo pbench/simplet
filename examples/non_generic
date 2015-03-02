@@ -1,0 +1,12 @@
+numeric: int
+vars: x,y
+
+lp:
+
+minimize x;   
+x <= y;
+x >= y;
+
+
+#this linear program correspond to Example 4.39 in
+#Tropical aspects of linear programming, Pascal Benchimol, PhD Thesis, 2014

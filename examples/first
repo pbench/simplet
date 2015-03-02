@@ -1,0 +1,31 @@
+#specify which numeric type to work with; can be 'int', 'float' or the arbitrary precision 'big_int', 'big_rational'; default is 'int'
+
+numeric: int
+
+#name of the variables 
+
+vars: x,y
+
+#specify the linear program
+
+lp:
+
+minimize x;   #objective function, start with 'minimize' or 'maximize'
+
+#constraints, here the feasible set is the rectangle between (1,1) and (2,3) 
+
+x <=2;
+y <= 3;
+x >= 1; 
+y >= 1;
+
+#the following constraints are redundant
+
+max( 1, x) <= 3; #here the affine component appears twice, this will issue a warning and only the relevant coefficient will be kept (in this case, 3)
+
+max( 5*3 - 4/2 + x, y) <= 9+8 ; #the parser can handle basic arithmetic operations 
+
+
+#can give an initial basic point; in that case, the linear program must be generic, bounded, and not contains point with -oo entries (otherwise you may get an error)
+
+basic point = 2,3;

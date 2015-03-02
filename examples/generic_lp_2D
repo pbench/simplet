@@ -1,0 +1,12 @@
+numeric: float
+vars: x,y
+lp:
+minimize max(x,y-4);
+max(x,y) <=3;
+x >= 1;
+y >= 1;
+
+basic point = 3,1;
+
+#this linear program correspond to Example 4.35 in
+#Tropical aspects of linear programming, Pascal Benchimol, PhD Thesis, 2014

@@ -1,0 +1,21 @@
+numeric: int
+
+vars: x,y,z
+
+lp:
+
+minimize max(x-2, y, z-3);   
+
+max(0, y-1) >= max(x-1, z-3); 
+z >= max(0, y-2);
+y >= 0;
+x >= max(0, y-3);
+y - 4 <= 0;
+
+
+basic point = 4,4,2;
+
+#this linear program correspond to Example 4.21 in
+#Tropical aspects of linear programming, Pascal Benchimol, PhD Thesis, 2014
+
+
